@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <base href="./" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="app/css/core.css?r=2" />
+    <title></title>
+</head>
+
+<body>
+    <!-- <iframe id="center-widget" src="app/widgets/center-widget/"></iframe> -->
+    <div id="expired" class="expired-container hide">
+        <div class="expired">
+            <span>Your session has expired! Please sign in again.</span>
+            <div onclick="window.parent.postMessage({ action: 'reload' }, '*');" class="ok">OK</div>
+        </div>
+    </div>
+    <script type="text/javascript" src="app/js/moment.locales.min.js"></script>
+    <script type="text/javascript" src="app/js/moment.tz.js"></script>
+    <script type="text/javascript">
+        const c_rev = 505;
+        const {
+            core_v
+        } = localStorage;
+        delete localStorage.lastSportModel;
+        const script = document.createElement("script");
+        script.id = "core-cs";
+        script.src = "app/js/core.js?r=" + c_rev;
+        document.body.appendChild(script);
+    </script>
+    <script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"version":"2024.11.0","token":"716e2356d7fb43328c19f82c08cd02e4","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}'
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
